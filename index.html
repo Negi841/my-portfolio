@@ -1,0 +1,660 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            font-family: "Poppins", sans-serif;
+        }
+        .section_one{
+            width: 100%;
+            min-height: 400px;
+            background-image:url("banner_img.png");
+            background-repeat: no-repeat;
+            background-position:center 30%;
+            background-size:cover;
+        
+            height: 400px;
+            margin: 0px;
+        }
+        .header{
+
+            border-bottom: 1px solid black;
+            width: 100%;
+            height:60px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .first_header{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .first_header h4{
+            color: white;
+        } 
+        .second_header{
+            width: 50%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content:space-between;
+            gap: 10px;
+
+        }
+        
+        .nav {
+            border-bottom: 2px solid transparent;
+            padding-bottom: 5px;
+        }
+
+        .nav:has(.navbar:hover) {
+            border-bottom: 2px solid purple;
+            transition: 0.4s ease-in;
+        }
+
+        .navbar {
+            font-size: 14px;
+            color: wheat;
+            text-decoration: none;
+        }   
+        .third_header{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .third_header button{
+            border: 1px solid #7b05ea ;
+            border-radius: 15px ;
+            text-align: center;
+            width: 70px;
+            height: 30px;
+            background-color: #7b05ea;
+            color:white;
+        }
+        .left_template{
+            width:60%;
+            padding: 40px 0px 0px 70px;
+            
+        }
+        .self{
+            color:rgb(238, 54, 238);
+        }
+        .name{
+            color: white;
+            font-size: 800;
+        }
+        .tagname{
+            background:  linear-gradient(80deg, #A855F7, #103878);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .self-content{
+            color: white;
+            font-weight: 400;
+        }
+        .template_button{
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .template_button button{
+            width:150px;
+            height: 40px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+        }
+        .visite{
+            border: 0px;
+            background-color: #7b05ea;
+            color: white;
+            font-weight: 700;
+        }
+        .contact{
+            border: 1px solid white;
+            background-color: #0B1020;
+            color: white;
+            font-weight: 700;
+        }
+        .section_two{
+            width: 100%;
+            padding: 0px 100px 0px 100px;
+            box-sizing: border-box;
+        }
+        .work{
+            color: rgb(208, 37, 208);
+        }
+        .section_two{
+            width: 100%;
+            padding: 20px 100px 0px 100px;
+            box-sizing: border-box;
+            
+        }
+        .provide{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+        }
+        .topic{
+            width: 100%;
+            
+        }
+        .topic p{
+
+            margin: 10px 0px 0px 0px;
+        }
+        .topic_header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .topic_header h3{
+            margin: 10px 0px 10px 0px;
+            border-bottom: 2px solid #7e44b5;
+            padding-bottom: 10px;
+
+        }
+        .provide p{
+            color: #7b05ea;
+        }
+        .service{
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            justify-content:start;
+            gap: 80px;
+            margin-top: 30px;
+        }
+        .service_box{
+            width: 19%;
+            height: 180px;
+            box-shadow: 1px 1px 5px grey;
+            padding: 10px 10px 10px 10px;
+            box-sizing: border-box;
+        }
+        .service_box h4{
+            padding: 0px;
+            margin: 10px 0px 0px 0px;
+            margin-bottom: 5px;
+        }
+        .service_box p{
+            margin-top: 0px;
+            width: 100%;
+            font-size: small;
+            
+        }
+        .border_underline{
+            width: 20%;
+            height: 2px;
+            background: linear-gradient( to right,
+        #eee5f8 -2%,
+        #7b05ea 6%,
+        #eee5f8 100%);
+            border-radius: 20px;
+        }
+        .section_third{
+            width: 100%;
+            padding: 40px 100px 20px 100px;
+            box-sizing: border-box;
+            margin-top: 50px;
+            background-color: rgb(247, 240, 240);
+            height: 300px;
+        }
+        .about_me{
+            display: flex;
+            justify-content: start;
+            gap: 60px;
+        }
+        .about_image{
+            width: 40%;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+        .about_image img{
+            width: 100%;
+            height: 200px;
+        }
+        .about_cont{
+            width: 50%;
+        }
+        .about_cont h3{
+            margin: 0px;
+        }
+        .about_header{
+            color: #7e44b5;
+            border: none;
+            height: 20px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .about_underline{
+            margin-top: 5px;
+            width: 20%;
+            height: 2px;
+            background: linear-gradient( to right,
+        #eee5f8 -2%,
+        #7b05ea 6%,
+        #eee5f8 100%);
+            border-radius: 20px;
+        }
+        .about-text{
+            width: 60%;
+            font-size: 14px;
+            font-weight: 100;
+            color: rgb(54, 52, 52);
+        }
+        .experience{
+            margin-top: 20px;
+            width: 90%;
+            display: flex;
+            justify-content: start;
+        }
+        .ex_box{
+            text-align: center;
+            border-right: 2px solid rgb(147, 147, 147);
+            width: 35%;
+            height: 40px;
+        }
+        .ex_box h2{
+            margin: 0px;
+        }
+        .ex_box p{
+            margin: 0px;
+            font-size: 12px;
+            color: rgb(129, 127, 127);
+        }
+        .section_fourth{
+            width: 100%;
+            padding: 30px 100px 10px 100px;
+            box-sizing: border-box;
+            height: 350px;
+        }
+        .project_head{
+            text-align: center;
+
+
+        }
+        .p_title{
+            color:#7e44b5 ;
+            margin: 0px;
+            font-size: 14px;
+
+        }
+        .project_head_bottom{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .project_head_bottom h3{
+            margin: 12px 0px 0px 0px;
+            border-bottom: 2px  solid #7e44b5;
+            padding-bottom: 10px;
+        }
+        .project{
+            display: flex;
+            justify-content:start;
+            gap: 30px;
+            margin-top: 20px;
+
+        }
+        .project_box{
+            width:30%;
+            height: 80px;
+        }
+        .p_image{
+            border: 1px solid black ;
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .p_image img{
+            width: 100%;
+            height: 150px;
+        }
+        .project_box p{
+            color: rgb(129, 127, 127);
+            margin:5px 0px 0px 0px;
+            font-size: 12px;
+
+        }
+        .project_box h4{
+            margin: 10px 0px 0px 0px;
+        }
+        .section_fifth{
+            width: 100%;
+            padding: 10px 100px 20px 100px;
+            box-sizing: border-box;
+            margin-top: 20px;
+            background-color: rgb(237, 234, 249);
+        }
+        .testimonial_header{
+            text-align: center;
+        }
+        .testimonial_header p{
+            color:#7e44b5;
+            margin:20px 0px 0px 0px;
+        }
+        .testimonial-bottom{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .testimonial-bottom h3{
+            margin: 8px 0px 0px 0px;
+            border-bottom: 2px solid #7b05ea;
+            padding-bottom: 10px;
+        }
+        .testimonial{
+            display: flex;
+            justify-content:start;
+            gap: 50px;
+            margin-top: 30px;
+        }
+        .testimonial_box{
+            width: 33%;
+            height: 200px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 1px 1px 3px;
+            padding: 5px 20px 5px 20px;
+            box-sizing: border-box;
+        }
+        .testimonial_box p{
+            font-size: 13px;
+        }
+        .details{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 20px;
+        }
+        .deails_img{
+            width: 20%;
+            border: 1px solid black;
+            height: 55px;
+            border-radius: 50%;
+        }
+        .deatils_box h4{
+            margin: 0px;
+        }
+        .deatils_box p{
+            margin: 3px 0px 0px 0px;
+            color:rgb(129, 127, 127) ;
+            font-size: 13px;
+        }
+        .footer{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            background-color: #0a0c17;
+            box-sizing: border-box;      
+            padding:0px 40px 0px 40px ;
+            gap: 20px;
+            height: 230px;
+
+        }
+        .footer_box{
+            width: 15%;
+            
+        }
+        .footer_box h3{
+            color:white;
+        }
+        .footer_box p{
+            color: rgb(210, 210, 210);
+            font-size: 13px;
+            margin: 15px 0px 0px 8px;
+        }
+    </style>
+    <body>
+        <div class ="section_one">
+            <div class="header">
+                <div class="first_header">
+                    <h4>Devfolio</h4>
+                </div>
+                <div class="second_header">
+                    <div class="nav"><a href="#" class="navbar">Home</a></div>
+                    <div class="nav"><a href="#" class="navbar">About</a></div>
+                    <div class="nav"><a href="#" class="navbar">Service</a></div>
+                    <div class="nav"><a href="#" class="navbar">Portfolio</a></div>
+                    <div class="nav"><a href="#" class="navbar">Testimonials</a></div>
+                    <div class="nav"><a href="#" class="navbar">Contact</a></div>
+                </div>
+                <div class="third_header">
+                    <button>Hire Me</button>
+                </div>
+            </div>
+            <div class="template">
+                <div class="left_template">
+                    <p class="self">HELLO, I'M</p>
+                    <h1 class="name">Sourav Singh Negi</h1>
+                    <h4 class="tagname">Full-Stack Developer</h4>
+                    <p class="self-content">I create beautiful,responsive and user-friendly website that help businesses grow.</p>
+                    <div class="template_button">
+                        <button class="visite">View My work</button>
+                        <button class="contact">Contact Me</button>
+                    </div>
+                </div>
+                <div class="right_template"></div>
+            </div>
+        </div>
+        <div class="section_two">
+            <div class="provide">
+                <div class="topic">
+                    <p>WHAT I DO</p>
+                    <div class="topic_header"> <h3>Services I Provide</h3></div>
+                </div>
+            </div>
+            <div class="service">
+                <div class="service_box">
+                    <svg width="50" height="50" viewBox="0 0 93 94" xmlns="http://www.w3.org/2000/svg">
+                     <rect width="93" height="94" rx="18" fill="#F3EEFC"/>
+                      <path d="M33.5 32L20 46.5L33.5 61" fill="none" stroke="#6438D2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M53 27L40 67" fill="none" stroke="#6438D2" stroke-width="4" stroke-linecap="round" />
+                      <path d="M59.5 32L73 46.5L59.5 61"fill="none"stroke="#6438D2"stroke-width="4"stroke-linecap="round"stroke-linejoin="round"/>
+                    </svg>
+                    <h4>Web Developer</h4>
+                    <p>Building morer and responsive websites that work perfectly</p>
+                    <div class="border_underline"></div>
+                </div>
+                <div class="service_box">
+                    <svg width="50" height="50" viewBox="0 0 93 90" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0" y="0" width="93" height="90" rx="18" fill="#F5F0FC"/>
+                        <path d="   M67 20   C64 18 57 23 47 31   C43 34 40 38 40 40   C39 43 41 44 45 46   C47 47 48 49 48 50   C50 51 52 49 55 45   C60 40 64 34 66 29   C69 24 69 21 67 20   Z " fill="#6336D4"/>
+                        <path d="  M43 55  C42 52 39 49 36 48  C33 47 29 47 27 51  C26 53 27 56 26 58  C25 60 23 61 20 61  C19 62 20 64 22 64  C25 66 30 66 34 65  C38 64 42 61 43 57  C44 56 44 55 43 55  Z "fll="#6336D4"/>
+                    </svg>
+                    <h4>UI/UX Design</h4>
+                    <p>Design clean and user-friendly interfaces for better experience</p>
+                    <div class="border_underline"></div>
+                </div>
+                <div class="service_box">
+                    <svg width="50" height="50" viewBox="0 0 96 90" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0" y="0" width="96" height="90" rx="18" fill="#F3EEFC"/>
+                        <rect x="30" y="17" width="35" height="53" rx="5" fill="#6434C7"/>
+                        <rect x="34" y="21" width="27" height="38" rx="1" fill="#F7F3FC"/>
+                        <rect x="34" y="59" width="27" height="7" fill="#6434C7"/>
+                        <circle cx="47.5" cy="63" r="2" fill="#F3EEFC"/>
+                        
+                    </svg>
+                    <h4>Responsive Design </h4>
+                    <p>Making website that look great on all devices and  screen  sizes</p>
+                    <div class="border_underline"></div>
+                </div>
+                <div class="service_box">
+                    <svg width="50" height="50" viewBox="0 0 105 105" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="105" height="105" rx="15" fill="#F6F1FF"/>
+                        <path d="M23.5 63.5    C23.5 41.8 36.8 25.8 52.5 25.8    C68.2 25.8 81.5 41.8 81.5 63.5" fill="none" stroke="#6536D8" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M23.5 63.5    L81.5 63.5" fill="none" stroke="#6536D8" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M31.5 42.5 L35.5 45.5" stroke="#6536D8" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M43 31.5 L44.5 36" stroke="#6536D8" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M62 31.5 L60.5 36" stroke="#6536D8" stroke-width="3" stroke-linecap="round"/>
+                      <path d="M73.5 42.5 L69.5 45.5" stroke="#6536D8" stroke-width="3" stroke-linecap="round"/>
+                      <path md="M52.5 59.5 L69.5 38.5" mstroke="#6536D8" mstroke-width="4" mstroke-linecap="round" mstroke-linejoin="round"/>
+                      <circle cx="52.5" cy="59.5" r="3.2" fill="#6536D8"/>
+                    </svg>
+                    <h4>Performance</h4>
+                    <p>Optimizing websites for faster loading speed  and  better Performanc4</p>
+                    <div class="border_underline"></div>
+                </div>
+            </div>
+        </div>
+        <div class="section_third">
+            <div class="about_me">
+                <div class="about_image">
+                    <img src="desktopimage.jpg" alt="">
+                </div>
+                <div class="about_cont">
+                    <p class="about_header">ABOUT ME</p>
+                    <H3>I'm a Full-Stack Developer</H3>
+                    <div class="about_underline"></div>
+                    <p class="about-text">I am passionate about creating beautiful and efficient web experience. I love turning idea into real products that users enjoy. </p>
+                    <div class="experience">
+                        <div class="ex_box">
+                            <h2>2+</h2>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="ex_box">
+                            <h2>30+</h2>
+                            <p>Project Completed</p>
+                        </div>
+                        <div class="ex_box">
+                            <h2>20+</h2>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="section_fourth">
+            <div class="project_head">
+                <p class="p_title">MY WORK</p>
+                <div class="project_head_bottom">
+                    <h3>Recent Project</h3>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project_box">
+                    <div class="p_image">
+                        <img src="" alt="">
+                    </div>
+                    <h4>Music Website</h4>
+                    <P>HTML,CSS ,JAVASCRIPTS</P>
+                </div>
+                <div class="project_box">
+                    <div class="p_image">
+                        <img src="" alt="">
+                    </div>
+                    <h4>Music Website</h4>
+                    <P>HTML,CSS ,JAVASCRIPTS</P>
+                </div>
+                <div class="project_box">
+                    <div class="p_image">
+                        <img src="" alt="">
+                    </div>
+                    <h4>Music Website</h4>
+                    <P>HTML,CSS ,JAVASCRIPTS</P>
+                </div>
+            </div>
+        </div>
+        <div class="section_fifth">
+            <div class="testimonial_header">
+                <p>Testimonials</p>
+                <div class="testimonial-bottom">
+                    <h3>What Clients Say</h3>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial_box">
+                    <h3>"</h3>
+                    <p>Sourav is a great developer. He delivered the project on time and the quality was amazing</p>
+                    <div class="details">
+                        <div class="deails_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="deatils_box">
+                            <h4>Sarah Johnson</h4>
+                            <p>CEO,TechCrop</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial_box">
+                    <h3>"</h3>
+                    <p>Very professional and easy to work with. Highly recommended for any web developer projects.</p>
+                    <div class="details">
+                        <div class="deails_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="deatils_box">
+                            <h4>Michael Brown</h4>
+                            <p>Founder, DevStart</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial_box">
+                    <h3>"</h3>
+                    <p>Excellent communication and coding skills. will definitely work with Sourav again!</p>
+                    <div class="details">
+                        <div class="deails_img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="deatils_box">
+                            <h4>Emily Davis</h4>
+                            <p>Marketing Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer_box">
+                <h3>Devfolio</h3>
+                <p>Let's works together to build something amazing for your businesses</p>
+                <div class="links">
+                    <div class="links_box"></div>
+                    <div class="links_box"></div>
+                    <div class="links_box"></div>
+                </div>
+            </div>
+            <div class="footer_box">
+                <h3>Quick Links</h3>
+                <p>Home</p>
+                <p>About</p>
+                <p>Service</p>
+                <p>Portfolio</p>
+                <p>Contact</p>
+            </div>
+            <div class="footer_box">
+                <h3>Servicea</h3>
+                <p>Web Development</p>
+                <p>UX/UI Design</p>
+                <p>Responsive Design</p>
+                <p>Performance </p>
+            </div>
+            <div class="footer_box">
+                <h3>Contact Me</h3>
+            </div>
+        </div>
+    </body>
+    </html>
