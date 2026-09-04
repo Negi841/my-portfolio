@@ -438,6 +438,9 @@
         .nevbar-section{
             display:none;
         }
+        .slide-menu a{
+            display: none;
+        }
 
         @media (max-width:700px) {
             .left_template{
@@ -672,12 +675,12 @@
                 right: 0px;
                 transition: right 0.4s ease;
             }
-            .slide-menu a {
+            .slide-menu a{
+                display: block;
                 text-decoration: none;
                 color: black;
                 font-size: 20px;
-            }
-            
+            } 
         }
         @media(max-width:400px){
             .template{
@@ -961,5 +964,6 @@
         menuBtn.addEventListener('click',function(){
             menuBtn.classList.toggle("active");
             slideMenu.classList.toggle("active");
+            
         })
     </script>
