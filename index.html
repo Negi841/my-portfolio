@@ -6,9 +6,14 @@
         <title>My-Portfolio</title>
     </head>
     <style>
+        *{
+            box-sizing: border-box;
+        }
+        html,
         body{
             padding: 0px;
             margin: 0px;
+            height: auto;
             font-family: "Poppins", sans-serif;
         }
         .section_one{
@@ -16,7 +21,7 @@
             min-height: 400px;
             background-image:url("banner_img.png");
             background-repeat: no-repeat;
-            background-position:center 30%;
+            background-position:center 40%;
             background-size:cover;
         
             height: 400px;
@@ -31,7 +36,7 @@
             justify-content: space-between;
         }
         .first_header{
-            width: 20%;
+            width: 15%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -40,12 +45,12 @@
             color: white;
         } 
         .second_header{
-            width: 50%;
+            width: 60%;
             display: flex;
             align-items: center;
             text-align: center;
             justify-content:space-between;
-            gap: 10px;
+            
 
         }
         
@@ -60,12 +65,12 @@
         }
 
         .navbar {
-            font-size: 14px;
+            font-size: clamp(11px, 2vw, 16px);
             color: wheat;
             text-decoration: none;
         }   
         .third_header{
-            width: 20%;
+            width: 15%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -99,6 +104,7 @@
             background-clip: text;
         }
         .self-content{
+            width: 70%;
             color: white;
             font-weight: 400;
         }
@@ -106,9 +112,10 @@
             width: 50%;
             display: flex;
             justify-content: space-between;
+
         }
         .template_button button{
-            width:150px;
+            width:40%;
             height: 40px;
             border-radius: 5px;
             display: flex;
@@ -132,7 +139,7 @@
         .section_two{
             width: 100%;
             padding: 0px 100px 0px 100px;
-            box-sizing: border-box;
+           
         }
         .work{
             color: rgb(208, 37, 208);
@@ -140,12 +147,13 @@
         .section_two{
             width: 100%;
             padding: 20px 100px 0px 100px;
-            box-sizing: border-box;
+           
             
         }
         .provide{
             width: 100%;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -176,18 +184,20 @@
         }
         .service{
             width: 100%;
-            margin-top: 10px;
+            /* margin-top: 10px; */
             display: flex;
-            justify-content:start;
-            gap: 80px;
+            flex-wrap: wrap;
+            justify-content:space-between;
+            /* gap: 80px; */
             margin-top: 30px;
         }
         .service_box{
             width: 19%;
-            height: 180px;
+            margin-top: 20px;
+            min-width: 200px;
             box-shadow: 1px 1px 5px grey;
             padding: 10px 10px 10px 10px;
-            box-sizing: border-box;
+           
         }
         .service_box h4{
             padding: 0px;
@@ -215,12 +225,13 @@
             box-sizing: border-box;
             margin-top: 50px;
             background-color: rgb(247, 240, 240);
-            height: 300px;
+            /* height: 300px; */
         }
         .about_me{
             display: flex;
-            justify-content: start;
-            gap: 60px;
+            justify-content: space-between;
+
+
         }
         .about_image{
             width: 40%;
@@ -257,7 +268,7 @@
             border-radius: 20px;
         }
         .about-text{
-            width: 60%;
+            width: 80%;
             font-size: 14px;
             font-weight: 100;
             color: rgb(54, 52, 52);
@@ -271,7 +282,7 @@
         .ex_box{
             text-align: center;
             border-right: 2px solid rgb(147, 147, 147);
-            width: 35%;
+            width: 40%;
             height: 40px;
         }
         .ex_box h2{
@@ -284,9 +295,8 @@
         }
         .section_fourth{
             width: 100%;
-            padding: 30px 100px 10px 100px;
-            box-sizing: border-box;
-            height: 350px;
+            /* height: auto; */
+            padding: 30px 10% 20px 10%;
         }
         .project_head{
             text-align: center;
@@ -310,16 +320,14 @@
             border-bottom: 2px  solid #7e44b5;
             padding-bottom: 10px;
         }
-        .project{
+        .project {
             display: flex;
-            justify-content:start;
-            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: space-between;
             margin-top: 20px;
-
         }
         .project_box{
             width:30%;
-            height: 80px;
         }
         .p_image{
             border: 1px solid black ;
@@ -343,7 +351,7 @@
         }
         .section_fifth{
             width: 100%;
-            padding: 10px 100px 20px 100px;
+            padding: 10px 10% 20px 10%;
             box-sizing: border-box;
             margin-top: 20px;
             background-color: rgb(237, 234, 249);
@@ -409,9 +417,9 @@
             justify-content: space-between;
             background-color: #0a0c17;
             box-sizing: border-box;      
-            padding:0px 40px 0px 40px ;
+            padding:20px 40px 20px 40px ;
             gap: 20px;
-            height: 230px;
+            /* height: 230px; */
 
         }
         .footer_box{
@@ -425,6 +433,279 @@
             color: rgb(210, 210, 210);
             font-size: 13px;
             margin: 15px 0px 0px 8px;
+        }
+        
+        .nevbar-section{
+            display:none;
+        }
+
+        @media (max-width:700px) {
+            .left_template{
+                padding-left: 40px;
+            }
+            .template_button{
+                width: 60%;
+            }
+            .service{
+                margin-top: 0px;
+            }
+            .service_box{
+                margin-top: 40px;
+            }
+            .section_third{
+                padding-left: 20px;
+                padding-right: 10px;
+            }
+            .about_image{
+                margin-top: 0px;
+            }
+            .about_header{
+                margin-top: 0px;
+            }
+            .ex_box{
+                width: 40%;
+            }
+            .ex_box h2{
+                font-weight: 600;
+                font-size: 18px;
+            }
+            .ex_box p{
+                font-size: 12px;
+            }
+            .section_fourth{
+                padding: 20px 20px 20px 20px;
+            }
+            .section_fifth{
+                padding: 10px  20px 20px 20px;
+            }
+            .testimonial_box{
+                padding: 5px 10px 10px 10px;
+            }
+            .testimonial_box h3{
+                margin-bottom: 0px;
+            }
+            .testimonial_box p{
+                margin-top: 5px;
+            }
+            .deatils_box p{
+                font-size: 12px;
+            }
+            .deatils_box h4{
+                font-size: 14px;
+            }
+            .deails_img{
+                height: 36px;
+            }
+            .deails_img img{
+                height: 36px;
+            }
+        }
+        @media(max-width:480px){
+            .section_one{
+                min-height: 280px;
+                height: 300px;
+                box-sizing: border-box;
+            }
+            .header{
+                padding-left: 20px;
+                padding-right: 20px;
+                box-sizing: border-box;
+            }
+            .second_header{
+                display: none;
+            }
+            .third_header{
+                display: none;
+            }
+            .left_template{
+                padding: 0px 0px 0px 15px;
+            }
+            .self{
+                font-size: 12px;
+                margin-bottom: 4px;
+                margin-left: 2px;
+            }
+            .name{
+                font-size: 25px;
+                margin: 0px 0px 5px 0px;
+            }
+            .tagname{
+                margin: 5px 0px 2px 5px;
+                font-size: 14px;
+            }
+            .self-content{
+                font-size: 14px;
+                margin-left: 4px;
+            }
+            .template_button button{
+                width: 40%;
+                height: 30px;
+                font-size: 9px;
+                font-weight: 400;
+                padding-left: 2px ;
+                padding-right: 2px;
+            }
+            .section_two{
+                width: 100%;
+                padding: 20px 15px 20px 15px;
+                box-sizing: border-box;
+
+            }
+
+
+
+            .section_third{
+                padding-bottom: 30px;
+            }
+            
+            .about_me{
+                display: block;
+
+            }
+            .about_image{
+                width: 100%;
+            }
+            .about_cont{
+                margin-top: 20px;
+                width: 100%;
+            }
+            .about-text{
+                width: 90%;
+            }
+
+            .project{
+                display: block;
+                width: 100%;
+            }
+            .project_box{
+                width: 100%;
+                margin-top: 40px;
+            }
+            
+            .section_fifth{
+                padding: 10px 10% 10px 10%;
+            }
+            .testimonial{
+                width: 100%;
+                display:block;
+                align-items: center;
+            }
+            .testimonial_box{
+                width: 100%;
+                margin-top: 20px;
+            }
+            .deails_img {
+                width: 70px;
+                height: 67px;
+            }
+            .deails_img img{
+                width: 100%;
+                height: 67px;
+            }
+            .footer{
+                display: block;
+                padding-left: 10px;
+            }
+            .footer_box{
+                width: 100%;
+            }
+            
+            .service{
+                padding-left: 20%;
+
+                
+            }
+            .nevbar-section{
+                position: relative;
+                z-index:10;
+                display: block;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+            .menu-btn{
+                display: flex;
+                flex-direction: column;
+                background-color: transparent;
+                border: none;
+                gap:5px;
+                z-index:10;
+                
+                
+            }
+            .menu-btn span{
+                width: 20px;
+                height: 3px;
+                background-color: white;
+                transition: all 0.3s ease;
+            }
+            .menu-btn.active span:nth-child(1){
+                background-color: rgb(87, 85, 85);
+                transform: translateY(8px) rotate(45deg);
+            }
+            .menu-btn.active span:nth-child(2){
+                background-color: rgb(87, 85, 85);
+                opacity: 0;
+            }
+            .menu-btn.active span:nth-child(3){
+                background-color: rgb(87, 85, 85);
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            .slide-menu{
+                position:fixed;
+                top: 0px;      
+                right: -300px;   
+                display: none;
+                width: 250px;
+                height: 100vh;
+                background-color: white;
+                 display: flex;
+                flex-direction: column;
+                padding: 100px 30px;
+                gap: 25px;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+                transition: right 0.4s ease;
+
+            }
+            .slide-menu.active {
+                right: 0px;
+                transition: right 0.4s ease;
+            }
+            .slide-menu a {
+                text-decoration: none;
+                color: black;
+                font-size: 20px;
+            }
+            
+        }
+        @media(max-width:400px){
+            .template{
+                margin-top: 35px;
+            }
+            .self{
+                font-size: 10px;
+                margin-top: 10px;
+            }
+            .name{
+                font-size: 20px;
+            }
+            .tagname{
+                font-size: 12px;
+                 margin: 0px;
+            }
+            .self-content{
+                font-size: 14px;
+                width: 100%;
+            }
+            .template_button{
+                margin-top: 10px;
+                width: 80%;
+            }
+            .template_button button{
+                width: 40%;
+                height: 35px;
+            }
         }
     </style>
     <body>
@@ -443,6 +724,21 @@
                 </div>
                 <div class="third_header">
                     <button>Hire Me</button>
+                </div>
+                <div class="nevbar-section">
+                    <button class="menu-btn" id="menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="slide-menu" id="slide-menu">
+                    <a href="">Home</a>
+                    <a href="">About</a>
+                    <a href="">Service</a>
+                    <a href="">Portfolio</a>
+                    <a href="">Testimonials</a>
+                    <a href="">Contact</a>
                 </div>
             </div>
             <div class="template">
@@ -578,6 +874,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="section_fifth">
             <div class="testimonial_header">
                 <p>Testimonials</p>
@@ -632,7 +929,7 @@
                 <h3>Devfolio</h3>
                 <p>Let's works together to build something amazing for your businesses</p>
                 <div class="links">
-                    <div class="links_box"></div>
+                    <div class="links_box"> </div>
                     <div class="links_box"></div>
                     <div class="links_box"></div>
                 </div>
@@ -658,3 +955,11 @@
         </div>
     </body>
     </html>
+    <script>
+        const menuBtn=document.getElementById("menu-btn");
+        const slideMenu=document.getElementById("slide-menu")
+        menuBtn.addEventListener('click',function(){
+            menuBtn.classList.toggle("active");
+            slideMenu.classList.toggle("active");
+        })
+    </script>
