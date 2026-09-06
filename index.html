@@ -15,7 +15,478 @@
             margin: 0px;
             height: auto;
             font-family: "Poppins", sans-serif;
+            scroll-behavior: smooth;
         }
+        section,
+        .section_one,
+        .section_two,
+        .section_third,
+        .section_fourth,
+        .section_fifth,
+        .footer {
+            scroll-margin-top: 60px;
+        }
+        /* =========================================================
+           ADVANCED PORTFOLIO LOADER
+        ========================================================= */
+
+        .page-loader {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+        
+            background: #050505;
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            z-index: 999999;
+        
+            overflow: hidden;
+        
+            transition:
+                opacity 0.8s ease,
+                visibility 0.8s ease;
+        }
+
+
+        /* ================= GRID BACKGROUND ================= */
+
+        .loader-grid {
+            position: absolute;
+            inset: 0;
+        
+            background-image:
+                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+        
+            background-size: 45px 45px;
+        
+            mask-image: radial-gradient(
+                circle at center,
+                black 0%,
+                transparent 75%
+            );
+        
+            animation: gridMove 12s linear infinite;
+        }
+
+
+        @keyframes gridMove {
+        
+            from {
+                transform: translateY(0);
+            }
+        
+            to {
+                transform: translateY(45px);
+            }
+        
+        }
+
+
+        /* ================= LOADER CONTENT ================= */
+
+        .loader-content {
+            position: relative;
+        
+            width: min(420px, 85%);
+        
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        
+            z-index: 5;
+        
+            animation: loaderAppear 1s ease forwards;
+        }
+
+
+        @keyframes loaderAppear {
+        
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+        
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        
+        }
+
+
+        /* ================= ORBIT ================= */
+
+        .loader-orbit {
+            width: 145px;
+            height: 145px;
+        
+            position: relative;
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            margin-bottom: 30px;
+        }
+
+
+        .orbit-ring {
+            position: absolute;
+        
+            width: 115px;
+            height: 115px;
+        
+            border-radius: 50%;
+        
+            border: 1px solid rgba(255,255,255,0.15);
+        
+            border-top-color: #ffffff;
+        
+            animation: orbitSpin 1.8s linear infinite;
+        }
+
+
+        @keyframes orbitSpin {
+        
+            to {
+                transform: rotate(360deg);
+            }
+        
+        }
+
+
+        /* ================= SECOND RING ================= */
+
+        .loader-orbit::before {
+            content: "";
+        
+            position: absolute;
+        
+            width: 140px;
+            height: 140px;
+        
+            border-radius: 50%;
+        
+            border: 1px dashed rgba(255,255,255,0.12);
+        
+            animation: reverseSpin 8s linear infinite;
+        }
+
+
+        @keyframes reverseSpin {
+        
+            to {
+                transform: rotate(-360deg);
+            }
+        
+        }
+
+
+        /* ================= MOVING DOT ================= */
+
+        .orbit-dot {
+            position: absolute;
+        
+            width: 7px;
+            height: 7px;
+        
+            border-radius: 50%;
+        
+            background: #ffffff;
+        
+            box-shadow:
+                0 0 10px rgba(255,255,255,0.8),
+                0 0 25px rgba(255,255,255,0.4);
+        
+            animation: dotOrbit 1.8s linear infinite;
+        }
+
+
+        @keyframes dotOrbit {
+        
+            from {
+                transform: rotate(0deg) translateX(57px);
+            }
+        
+            to {
+                transform: rotate(360deg) translateX(57px);
+            }
+        
+        }
+
+
+        /* ================= CENTER LOGO ================= */
+
+        .loader-logo {
+            width: 62px;
+            height: 62px;
+        
+            border-radius: 50%;
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            background: #0b0b0b;
+        
+            border: 1px solid rgba(255,255,255,0.2);
+        
+            box-shadow:
+                inset 0 0 25px rgba(255,255,255,0.03),
+                0 0 30px rgba(255,255,255,0.05);
+        }
+
+
+        .loader-logo span {
+            font-size: 27px;
+        
+            font-weight: 700;
+        
+            color: #ffffff;
+        
+            font-family: Arial, sans-serif;
+        
+            letter-spacing: -2px;
+        }
+
+
+        /* ================= BRAND ================= */
+
+        .loader-brand {
+            font-family: Arial, sans-serif;
+        
+            font-size: 24px;
+        
+            font-weight: 700;
+        
+            letter-spacing: 7px;
+        
+            color: #ffffff;
+        
+            margin-bottom: 14px;
+        }
+
+
+        .loader-brand span {
+            opacity: 0.45;
+        }
+
+
+        /* ================= STATUS ================= */
+
+        .loader-status {
+            display: flex;
+        
+            align-items: center;
+        
+            gap: 4px;
+        
+            font-family: monospace;
+        
+            font-size: 10px;
+        
+            letter-spacing: 3px;
+        
+            color: rgba(255,255,255,0.45);
+        
+            margin-bottom: 24px;
+        }
+
+
+        .loader-dots {
+            animation: blinkDots 1s infinite;
+        }
+
+
+        @keyframes blinkDots {
+        
+            0%,
+            100% {
+                opacity: 0.2;
+            }
+        
+            50% {
+                opacity: 1;
+            }
+        
+        }
+
+
+        /* ================= PROGRESS ================= */
+
+        .loader-progress {
+            width: 100%;
+        
+            height: 2px;
+        
+            background: rgba(255,255,255,0.08);
+        
+            overflow: hidden;
+        
+            position: relative;
+        }
+
+
+        .loader-progress-bar {
+            width: 0%;
+        
+            height: 100%;
+        
+            background: #ffffff;
+        
+            box-shadow:
+                0 0 10px rgba(255,255,255,0.7);
+        
+            transition: width 0.15s linear;
+        }
+
+
+        /* ================= BOTTOM INFO ================= */
+
+        .loader-bottom {
+            width: 100%;
+        
+            display: flex;
+        
+            justify-content: space-between;
+        
+            margin-top: 10px;
+        
+            font-family: monospace;
+        
+            font-size: 9px;
+        
+            letter-spacing: 1.5px;
+        
+            color: rgba(255,255,255,0.3);
+        }
+
+
+        /* ================= CORNER DETAILS ================= */
+
+        .loader-corner {
+            position: absolute;
+        
+            width: 35px;
+            height: 35px;
+        
+            opacity: 0.35;
+        }
+
+
+        .loader-corner::before,
+        .loader-corner::after {
+            content: "";
+        
+            position: absolute;
+        
+            background: #ffffff;
+        }
+
+
+        .top-left {
+            top: 35px;
+            left: 35px;
+        
+            border-top: 1px solid rgba(255,255,255,0.5);
+            border-left: 1px solid rgba(255,255,255,0.5);
+        }
+
+
+        .top-right {
+            top: 35px;
+            right: 35px;
+        
+            border-top: 1px solid rgba(255,255,255,0.5);
+            border-right: 1px solid rgba(255,255,255,0.5);
+        }
+
+
+        .bottom-left {
+            bottom: 35px;
+            left: 35px;
+        
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            border-left: 1px solid rgba(255,255,255,0.5);
+        }
+
+
+        .bottom-right {
+            bottom: 35px;
+            right: 35px;
+        
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            border-right: 1px solid rgba(255,255,255,0.5);
+        }
+
+
+        /* ================= LOADER EXIT ================= */
+
+        .page-loader.loader-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+        
+            .loader-orbit {
+                width: 125px;
+                height: 125px;
+            }
+        
+            .orbit-ring {
+                width: 100px;
+                height: 100px;
+            }
+        
+            .loader-orbit::before {
+                width: 120px;
+                height: 120px;
+            }
+        
+            .loader-brand {
+                font-size: 20px;
+                letter-spacing: 5px;
+            }
+        
+            .loader-corner {
+                width: 25px;
+                height: 25px;
+            }
+        
+            .top-left {
+                top: 20px;
+                left: 20px;
+            }
+        
+            .top-right {
+                top: 20px;
+                right: 20px;
+            }
+        
+            .bottom-left {
+                bottom: 20px;
+                left: 20px;
+            }
+        
+            .bottom-right {
+                bottom: 20px;
+                right: 20px;
+            }
+        
+        }
+
+
         .section_one{
             width: 100%;
             min-height: 400px;
@@ -147,9 +618,10 @@
         .section_two{
             width: 100%;
             padding: 20px 100px 0px 100px;
-           
+            
             
         }
+        
         .provide{
             width: 100%;
             display: flex;
@@ -190,6 +662,9 @@
             justify-content:space-between;
             /* gap: 80px; */
             margin-top: 30px;
+        }
+        #service{
+            scroll-margin-top: 50px;
         }
         .service_box{
             width: 19%;
@@ -712,248 +1187,295 @@
         }
     </style>
     <body>
-        <div class ="section_one">
-            <div class="header">
-                <div class="first_header">
-                    <h4>Devfolio</h4>
-                </div>
-                <div class="second_header">
-                    <div class="nav"><a href="#" class="navbar">Home</a></div>
-                    <div class="nav"><a href="#" class="navbar">About</a></div>
-                    <div class="nav"><a href="#" class="navbar">Service</a></div>
-                    <div class="nav"><a href="#" class="navbar">Portfolio</a></div>
-                    <div class="nav"><a href="#" class="navbar">Testimonials</a></div>
-                    <div class="nav"><a href="#" class="navbar">Contact</a></div>
-                </div>
-                <div class="third_header">
-                    <button>Hire Me</button>
-                </div>
-                <div class="nevbar-section">
-                    <button class="menu-btn" id="menu-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-                <div class="slide-menu" id="slide-menu">
-                    <a href="">Home</a>
-                    <a href="">About</a>
-                    <a href="">Service</a>
-                    <a href="">Portfolio</a>
-                    <a href="">Testimonials</a>
-                    <a href="">Contact</a>
-                </div>
-            </div>
-            <div class="template">
-                <div class="left_template">
-                    <p class="self">HELLO, I'M</p>
-                    <h1 class="name">Sourav Singh Negi</h1>
-                    <h4 class="tagname">Full-Stack Developer</h4>
-                    <p class="self-content">I create beautiful,responsive and user-friendly website that help businesses grow.</p>
-                    <div class="template_button">
-                        <button class="visite">View My work</button>
-                        <button class="contact">Contact Me</button>
-                    </div>
-                </div>
-                <div class="right_template"></div>
-            </div>
-        </div>
-        <div class="section_two">
-            <div class="provide">
-                <div class="topic">
-                    <p>WHAT I DO</p>
-                    <div class="topic_header"> <h3>Services I Provide</h3></div>
-                </div>
-            </div>
-            <div class="service">
-                <div class="service_box">
-                    <svg width="50" height="50" viewBox="0 0 93 94" xmlns="http://www.w3.org/2000/svg">
-                     <rect width="93" height="94" rx="18" fill="#F3EEFC"/>
-                      <path d="M33.5 32L20 46.5L33.5 61" fill="none" stroke="#6438D2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M53 27L40 67" fill="none" stroke="#6438D2" stroke-width="4" stroke-linecap="round" />
-                      <path d="M59.5 32L73 46.5L59.5 61"fill="none"stroke="#6438D2"stroke-width="4"stroke-linecap="round"stroke-linejoin="round"/>
-                    </svg>
-                    <h4>Web Developer</h4>
-                    <p>Building morer and responsive websites that work perfectly</p>
-                    <div class="border_underline"></div>
-                </div>
-                <div class="service_box">
-                    <svg width="50" height="50" viewBox="0 0 93 90" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="0" y="0" width="93" height="90" rx="18" fill="#F5F0FC"/>
-                        <path d="   M67 20   C64 18 57 23 47 31   C43 34 40 38 40 40   C39 43 41 44 45 46   C47 47 48 49 48 50   C50 51 52 49 55 45   C60 40 64 34 66 29   C69 24 69 21 67 20   Z " fill="#6336D4"/>
-                        <path d="  M43 55  C42 52 39 49 36 48  C33 47 29 47 27 51  C26 53 27 56 26 58  C25 60 23 61 20 61  C19 62 20 64 22 64  C25 66 30 66 34 65  C38 64 42 61 43 57  C44 56 44 55 43 55  Z "fll="#6336D4"/>
-                    </svg>
-                    <h4>UI/UX Design</h4>
-                    <p>Design clean and user-friendly interfaces for better experience</p>
-                    <div class="border_underline"></div>
-                </div>
-                <div class="service_box">
-                    <svg width="50" height="50" viewBox="0 0 96 90" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="0" y="0" width="96" height="90" rx="18" fill="#F3EEFC"/>
-                        <rect x="30" y="17" width="35" height="53" rx="5" fill="#6434C7"/>
-                        <rect x="34" y="21" width="27" height="38" rx="1" fill="#F7F3FC"/>
-                        <rect x="34" y="59" width="27" height="7" fill="#6434C7"/>
-                        <circle cx="47.5" cy="63" r="2" fill="#F3EEFC"/>
-                        
-                    </svg>
-                    <h4>Responsive Design </h4>
-                    <p>Making website that look great on all devices and  screen  sizes</p>
-                    <div class="border_underline"></div>
-                </div>
-                <div class="service_box">
-                    <svg width="50" height="50" viewBox="0 0 105 105" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="105" height="105" rx="15" fill="#F6F1FF"/>
-                        <path d="M23.5 63.5    C23.5 41.8 36.8 25.8 52.5 25.8    C68.2 25.8 81.5 41.8 81.5 63.5" fill="none" stroke="#6536D8" stroke-width="5" stroke-linecap="round"/>
-                        <path d="M23.5 63.5    L81.5 63.5" fill="none" stroke="#6536D8" stroke-width="5" stroke-linecap="round"/>
-                        <path d="M31.5 42.5 L35.5 45.5" stroke="#6536D8" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M43 31.5 L44.5 36" stroke="#6536D8" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M62 31.5 L60.5 36" stroke="#6536D8" stroke-width="3" stroke-linecap="round"/>
-                      <path d="M73.5 42.5 L69.5 45.5" stroke="#6536D8" stroke-width="3" stroke-linecap="round"/>
-                      <path md="M52.5 59.5 L69.5 38.5" mstroke="#6536D8" mstroke-width="4" mstroke-linecap="round" mstroke-linejoin="round"/>
-                      <circle cx="52.5" cy="59.5" r="3.2" fill="#6536D8"/>
-                    </svg>
-                    <h4>Performance</h4>
-                    <p>Optimizing websites for faster loading speed  and  better Performanc4</p>
-                    <div class="border_underline"></div>
-                </div>
-            </div>
-        </div>
-        <div class="section_third">
-            <div class="about_me">
-                <div class="about_image">
-                    <img src="desktopimage.jpg" alt="">
-                </div>
-                <div class="about_cont">
-                    <p class="about_header">ABOUT ME</p>
-                    <H3>I'm a Full-Stack Developer</H3>
-                    <div class="about_underline"></div>
-                    <p class="about-text">I am passionate about creating beautiful and efficient web experience. I love turning idea into real products that users enjoy. </p>
-                    <div class="experience">
-                        <div class="ex_box">
-                            <h2>2+</h2>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="ex_box">
-                            <h2>30+</h2>
-                            <p>Project Completed</p>
-                        </div>
-                        <div class="ex_box">
-                            <h2>20+</h2>
-                            <p>Happy Clients</p>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-        </div>
-        <div class="section_fourth">
-            <div class="project_head">
-                <p class="p_title">MY WORK</p>
-                <div class="project_head_bottom">
-                    <h3>Recent Project</h3>
-                </div>
-            </div>
-            <div class="project">
-                <div class="project_box">
-                    <div class="p_image">
-                        <img src="" alt="">
-                    </div>
-                    <h4>Music Website</h4>
-                    <P>HTML,CSS ,JAVASCRIPTS</P>
-                </div>
-                <div class="project_box">
-                    <div class="p_image">
-                        <img src="" alt="">
-                    </div>
-                    <h4>Music Website</h4>
-                    <P>HTML,CSS ,JAVASCRIPTS</P>
-                </div>
-                <div class="project_box">
-                    <div class="p_image">
-                        <img src="" alt="">
-                    </div>
-                    <h4>Music Website</h4>
-                    <P>HTML,CSS ,JAVASCRIPTS</P>
-                </div>
-            </div>
-        </div>
+        <!-- ================= ADVANCED PAGE LOADER ================= -->
+        <div class="page-loader" id="pageLoader">
         
-        <div class="section_fifth">
-            <div class="testimonial_header">
-                <p>Testimonials</p>
-                <div class="testimonial-bottom">
-                    <h3>What Clients Say</h3>
+            <div class="loader-grid"></div>
+        
+            <div class="loader-content">
+            
+                <div class="loader-orbit">
+                    <div class="orbit-dot"></div>
+                    <div class="orbit-ring"></div>
+                
+                    <div class="loader-logo">
+                        <span>D</span>
+                    </div>
                 </div>
+            
+                <div class="loader-brand">
+                    DEV<span>FOLIO</span>
+                </div>
+            
+                <div class="loader-status">
+                    <span id="loaderStatus">INITIALIZING</span>
+                    <span class="loader-dots">...</span>
+                </div>
+            
+                <div class="loader-progress">
+                    <div class="loader-progress-bar" id="loaderProgressBar"></div>
+                </div>
+            
+                <div class="loader-bottom">
+                    <span>FULL-STACK DEVELOPER</span>
+                    <span id="loaderPercent">00%</span>
+                </div>
+            
             </div>
-            <div class="testimonial">
-                <div class="testimonial_box">
-                    <h3>"</h3>
-                    <p>Sourav is a great developer. He delivered the project on time and the quality was amazing</p>
-                    <div class="details">
-                        <div class="deails_img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="deatils_box">
-                            <h4>Sarah Johnson</h4>
-                            <p>CEO,TechCrop</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial_box">
-                    <h3>"</h3>
-                    <p>Very professional and easy to work with. Highly recommended for any web developer projects.</p>
-                    <div class="details">
-                        <div class="deails_img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="deatils_box">
-                            <h4>Michael Brown</h4>
-                            <p>Founder, DevStart</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial_box">
-                    <h3>"</h3>
-                    <p>Excellent communication and coding skills. will definitely work with Sourav again!</p>
-                    <div class="details">
-                        <div class="deails_img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="deatils_box">
-                            <h4>Emily Davis</h4>
-                            <p>Marketing Manager</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
+            <div class="loader-corner top-left"></div>
+            <div class="loader-corner top-right"></div>
+            <div class="loader-corner bottom-left"></div>
+            <div class="loader-corner bottom-right"></div>
+        
         </div>
-        <div class="footer">
-            <div class="footer_box">
-                <h3>Devfolio</h3>
-                <p>Let's works together to build something amazing for your businesses</p>
-                <div class="links">
-                    <div class="links_box"> </div>
-                    <div class="links_box"></div>
-                    <div class="links_box"></div>
+
+        <div class="website" id="website">
+
+            <div class ="section_one" id="home">
+                <div class="header">
+                    <div class="first_header">
+                        <h4>Devfolio</h4>
+                    </div>
+                    <div class="second_header">
+                        <div class="nav"><a href="#home" class="navbar">Home</a></div>
+                        <div class="nav"><a href="#about" class="navbar">About</a></div>
+                        <div class="nav"><a href="#service" class="navbar">Service</a></div>
+                        <div class="nav"><a href="#project" class="navbar">Project</a></div>
+                        <div class="nav"><a href="#testimonials" class="navbar">Testimonials</a></div>
+                        <div class="nav"><a href="#contact" class="navbar">Contact</a></div>
+                    </div>
+                    <div class="third_header">
+                        <button>Hire Me</button>
+                    </div>
+                    <div class="nevbar-section">
+                        <button class="menu-btn" id="menu-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                    <div class="slide-menu" id="slide-menu">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#service">Service</a>
+                        <a href="#project">Porject</a>
+                        <a href="#testimonials">Testimonials</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="template">
+                    <div class="left_template">
+                        <p class="self">HELLO, I'M</p>
+                        <h1 class="name">Sourav Singh Negi</h1>
+                        <h4 class="tagname">Full-Stack Developer</h4>
+                        <p class="self-content">I create beautiful,responsive and user-friendly website that help businesses grow.</p>
+                        <div class="template_button">
+                            <button class="visite">View My work</button>
+                            <button class="contact">Contact Me</button>
+                        </div>
+                    </div>
+                    <div class="right_template"></div>
                 </div>
             </div>
-            <div class="footer_box">
-                <h3>Quick Links</h3>
-                <p>Home</p>
-                <p>About</p>
-                <p>Service</p>
-                <p>Portfolio</p>
-                <p>Contact</p>
+            <div class="section_two" id="service">
+                <div class="provide">
+                    <div class="topic">
+                        <p>WHAT I DO</p>
+                        <div class="topic_header"> <h3>Services I Provide</h3></div>
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="service_box">
+                        <svg width="50" height="50" viewBox="0 0 93 94" xmlns="http://www.w3.org/2000/svg">
+                         <rect width="93" height="94" rx="18" fill="#F3EEFC"/>
+                          <path d="M33.5 32L20 46.5L33.5 61" fill="none" stroke="#6438D2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M53 27L40 67" fill="none" stroke="#6438D2" stroke-width="4" stroke-linecap="round" />
+                          <path d="M59.5 32L73 46.5L59.5 61"fill="none"stroke="#6438D2"stroke-width="4"stroke-linecap="round"stroke-linejoin="round"/>
+                        </svg>
+                        <h4>Web Developer</h4>
+                        <p>Building morer and responsive websites that work perfectly</p>
+                        <div class="border_underline"></div>
+                    </div>
+                    <div class="service_box">
+                        <svg width="50" height="50" viewBox="0 0 93 90" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="0" width="93" height="90" rx="18" fill="#F5F0FC"/>
+                            <path d="   M67 20   C64 18 57 23 47 31   C43 34 40 38 40 40   C39 43 41 44 45 46   C47 47 48 49 48 50   C50 51 52 49 55 45   C60 40 64 34 66 29   C69 24 69 21 67 20   Z " fill="#6336D4"/>
+                            <path d="  M43 55  C42 52 39 49 36 48  C33 47 29 47 27 51  C26 53 27 56 26 58  C25 60 23 61 20 61  C19 62 20 64 22 64  C25 66 30 66 34 65  C38 64 42 61 43 57  C44 56 44 55 43 55  Z "fll="#6336D4"/>
+                        </svg>
+                        <h4>UI/UX Design</h4>
+                        <p>Design clean and user-friendly interfaces for better experience</p>
+                        <div class="border_underline"></div>
+                    </div>
+                    <div class="service_box">
+                        <svg width="50" height="50" viewBox="0 0 96 90" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="0" width="96" height="90" rx="18" fill="#F3EEFC"/>
+                            <rect x="30" y="17" width="35" height="53" rx="5" fill="#6434C7"/>
+                            <rect x="34" y="21" width="27" height="38" rx="1" fill="#F7F3FC"/>
+                            <rect x="34" y="59" width="27" height="7" fill="#6434C7"/>
+                            <circle cx="47.5" cy="63" r="2" fill="#F3EEFC"/>
+                            
+                        </svg>
+                        <h4>Responsive Design </h4>
+                        <p>Making website that look great on all devices and  screen  sizes</p>
+                        <div class="border_underline"></div>
+                    </div>
+                    <div class="service_box">
+                        <svg width="50" height="50" viewBox="0 0 105 105" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="105" height="105" rx="15" fill="#F6F1FF"/>
+                            <path d="M23.5 63.5    C23.5 41.8 36.8 25.8 52.5 25.8    C68.2 25.8 81.5 41.8 81.5 63.5" fill="none" stroke="#6536D8" stroke-width="5" stroke-linecap="round"/>
+                            <path d="M23.5 63.5    L81.5 63.5" fill="none" stroke="#6536D8" stroke-width="5" stroke-linecap="round"/>
+                            <path d="M31.5 42.5 L35.5 45.5" stroke="#6536D8" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M43 31.5 L44.5 36" stroke="#6536D8" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M62 31.5 L60.5 36" stroke="#6536D8" stroke-width="3" stroke-linecap="round"/>
+                          <path d="M73.5 42.5 L69.5 45.5" stroke="#6536D8" stroke-width="3" stroke-linecap="round"/>
+                          <path md="M52.5 59.5 L69.5 38.5" mstroke="#6536D8" mstroke-width="4" mstroke-linecap="round" mstroke-linejoin="round"/>
+                          <circle cx="52.5" cy="59.5" r="3.2" fill="#6536D8"/>
+                        </svg>
+                        <h4>Performance</h4>
+                        <p>Optimizing websites for faster loading speed  and  better Performanc4</p>
+                        <div class="border_underline"></div>
+                    </div>
+                </div>
             </div>
-            <div class="footer_box">
-                <h3>Servicea</h3>
-                <p>Web Development</p>
-                <p>UX/UI Design</p>
-                <p>Responsive Design</p>
-                <p>Performance </p>
+            <div class="section_third" id="about">
+                <div class="about_me">
+                    <div class="about_image">
+                        <img src="desktopimage.jpg" alt="">
+                    </div>
+                    <div class="about_cont">
+                        <p class="about_header">ABOUT ME</p>
+                        <H3>I'm a Full-Stack Developer</H3>
+                        <div class="about_underline"></div>
+                        <p class="about-text">I am passionate about creating beautiful and efficient web experience. I love turning idea into real products that users enjoy. </p>
+                        <div class="experience">
+                            <div class="ex_box">
+                                <h2>2+</h2>
+                                <p>Years Experience</p>
+                            </div>
+                            <div class="ex_box">
+                                <h2>30+</h2>
+                                <p>Project Completed</p>
+                            </div>
+                            <div class="ex_box">
+                                <h2>20+</h2>
+                                <p>Happy Clients</p>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
             </div>
-            <div class="footer_box">
-                <h3>Contact Me</h3>
+            <div class="section_fourth" id="project">
+                <div class="project_head">
+                    <p class="p_title">MY WORK</p>
+                    <div class="project_head_bottom">
+                        <h3>Recent Project</h3>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project_box">
+                        <div class="p_image">
+                            <img src="" alt="">
+                        </div>
+                        <h4>Music Website</h4>
+                        <P>HTML,CSS ,JAVASCRIPTS</P>
+                    </div>
+                    <div class="project_box">
+                        <div class="p_image">
+                            <img src="" alt="">
+                        </div>
+                        <h4>Music Website</h4>
+                        <P>HTML,CSS ,JAVASCRIPTS</P>
+                    </div>
+                    <div class="project_box">
+                        <div class="p_image">
+                            <img src="" alt="">
+                        </div>
+                        <h4>Music Website</h4>
+                        <P>HTML,CSS ,JAVASCRIPTS</P>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section_fifth" id="testimonials">
+                <div class="testimonial_header">
+                    <p>Testimonials</p>
+                    <div class="testimonial-bottom">
+                        <h3>What Clients Say</h3>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial_box">
+                        <h3>"</h3>
+                        <p>Sourav is a great developer. He delivered the project on time and the quality was amazing</p>
+                        <div class="details">
+                            <div class="deails_img">
+                                <img src="" alt="">
+                            </div>
+                            <div class="deatils_box">
+                                <h4>Sarah Johnson</h4>
+                                <p>CEO,TechCrop</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial_box">
+                        <h3>"</h3>
+                        <p>Very professional and easy to work with. Highly recommended for any web developer projects.</p>
+                        <div class="details">
+                            <div class="deails_img">
+                                <img src="" alt="">
+                            </div>
+                            <div class="deatils_box">
+                                <h4>Michael Brown</h4>
+                                <p>Founder, DevStart</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial_box">
+                        <h3>"</h3>
+                        <p>Excellent communication and coding skills. will definitely work with Sourav again!</p>
+                        <div class="details">
+                            <div class="deails_img">
+                                <img src="" alt="">
+                            </div>
+                            <div class="deatils_box">
+                                <h4>Emily Davis</h4>
+                                <p>Marketing Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer" id="contact">
+                <div class="footer_box">
+                    <h3>Devfolio</h3>
+                    <p>Let's works together to build something amazing for your businesses</p>
+                    <div class="links">
+                        <div class="links_box"> </div>
+                        <div class="links_box"></div>
+                        <div class="links_box"></div>
+                    </div>
+                </div>
+                <div class="footer_box">
+                    <h3>Quick Links</h3>
+                    <p>Home</p>
+                    <p>About</p>
+                    <p>Service</p>
+                    <p>Portfolio</p>
+                    <p>Contact</p>
+                </div>
+                <div class="footer_box">
+                    <h3>Servicea</h3>
+                    <p>Web Development</p>
+                    <p>UX/UI Design</p>
+                    <p>Responsive Design</p>
+                    <p>Performance </p>
+                </div>
+                <div class="footer_box">
+                    <h3>Contact Me</h3>
+                </div>
             </div>
         </div>
     </body>
@@ -966,4 +1488,85 @@
             slideMenu.classList.toggle("active");
             
         })
+        window.addEventListener('load',function(){
+            document.getElementById("loader").style.display="none";
+            document.getElementById("website").style.display="block";
+        })
+
+
+
+        /* =========================================================
+           ADVANCED PAGE LOADER
+        ========================================================= */
+
+        document.addEventListener("DOMContentLoaded", () => {
+        
+            const loader = document.getElementById("pageLoader");
+            const progressBar = document.getElementById("loaderProgressBar");
+            const percent = document.getElementById("loaderPercent");
+            const status = document.getElementById("loaderStatus");
+        
+            let progress = 0;
+        
+            const statusMessages = [
+                "INITIALIZING",
+                "LOADING ASSETS",
+                "BUILDING INTERFACE",
+                "OPTIMIZING EXPERIENCE",
+                "ALMOST READY"
+            ];
+        
+            const updateLoader = () => {
+            
+                progress += Math.floor(Math.random() * 4) + 1;
+            
+                if (progress > 100) {
+                    progress = 100;
+                }
+            
+                progressBar.style.width = progress + "%";
+            
+                percent.textContent =
+                    String(progress).padStart(2, "0") + "%";
+            
+                /* Change loading text */
+                const messageIndex = Math.min(
+                    Math.floor(progress / 20),
+                    statusMessages.length - 1
+                );
+            
+                status.textContent =
+                    statusMessages[messageIndex];
+            
+            
+                if (progress < 100) {
+                
+                    setTimeout(updateLoader, 45);
+                
+                } else {
+                
+                    setTimeout(() => {
+                    
+                        loader.classList.add("loader-hidden");
+                    
+                        document.body.style.overflow = "";
+                    
+                        setTimeout(() => {
+                            loader.remove();
+                        }, 900);
+                    
+                    }, 500);
+                
+                }
+            
+            };
+        
+        
+            /* Stop scrolling while loader is visible */
+            document.body.style.overflow = "hidden";
+        
+            updateLoader();
+        
+        });
+
     </script>
